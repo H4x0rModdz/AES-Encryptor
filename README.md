@@ -21,11 +21,12 @@ This is a simple AES Encryption Console Project written in C#. It allows you to 
   - [Encrypting Data](#encrypting-data)
   - [Decrypting Data](#decrypting-data)
 - [Tutorials](#tutorials)
-  - [Generating a Secure Encryption Key](#generating-a-secure-encryption-key)
-  - [Encrypting Data](#encrypting-data-tutorial)
-  - [Decrypting Data](#decrypting-data-tutorial)
+  - [Saving Encryption Details](#saving-encryption-details)
+  - [Viewing Encryption Details](#viewing-encryption-details)
+  - [Example Entry in keys](#example-entry-in-keys)
 - [Contributing](#contributing)
 - [License](#license)
+- [Change Log](#change-log)
 
 <br/>
 
@@ -42,61 +43,55 @@ This AES Encryption Console Project is designed to provide a simple and secure w
 - Encrypt sensitive data using AES algorithm
 - Decrypt previously encrypted data
 - Secure generation and management of encryption keys
+- User-friendly interface with options to encrypt and decrypt data
 
 <br/>
 
 ## Getting Started
 
 ### Prerequisites
-
 - [.NET SDK](https://dotnet.microsoft.com/download)
 - [Git](https://git-scm.com/downloads)
 
 ### Installation
-
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/KR0N-SECURITY/AES-Encryptor.git
-   ```
 
 2. After this, go to the destination folder:
 
    ```bash
-   cd AES-Encryptor
-   ```
-
-3. Build the project:   
-   ```bash
-   dotnet build
-   ```
-
+   cd AES-Encrypton
+   
 <br/>
 
 ## How to Use
 
 ### Encrypting Data
+
 To encrypt data, follow these steps:
+
 1. Open a terminal or command prompt.
 2. Navigate to the project directory.
 3. Run the encryption command:
-   
+
    ```bash
    dotnet run --project AES-Encryptor -- --encrypt
-   ```
-   
-5. Enter the data you want to encrypt when prompted.
-6. The encrypted data and the encryption key will be displayed.
+
+4. Enter the data you want to encrypt when prompted.
+5. The encrypted data and the encryption key will be displayed.
 
 ### Decrypting Data
+
 To decrypt data, follow these steps:
+
 1. Open a terminal or command prompt.
 2. Navigate to the project directory.
 3. Run the decryption command:
-   
+
    ```bash
    dotnet run --project AES-Encryptor -- --decrypt
-   ```
 
 4. Enter the encrypted data and encryption key when prompted.
 5. The decrypted data will be displayed.
@@ -105,31 +100,36 @@ To decrypt data, follow these steps:
 
 ## Tutorials
 
-### Generating a Secure Encryption Key
-To ensure the security of your encrypted data, it's essential to generate a strong and secure encryption key. Follow these steps to generate a secure key:
-1. Open a terminal or command prompt.
-2. Navigate to the project directory.
-3. Run the key generation command:
+### Saving Encryption Details
+After encrypting or decrypting data, the program saves the encryption details to a text file named `keys.txt`. If the file already exists, it appends the new details to the existing file. Each entry in the file includes the following information:
+- Method Used: Whether encryption or decryption was performed
+- Computer Name: The name of the computer where the operation was performed
+- Original Text: The text that was encrypted or decrypted
+- Encrypted Data: The encrypted data (only for encryption)
+- Key: The encryption key used
+- IV: The initialization vector used
+- Date of Operation: The date and time when the operation was performed
 
-   ```bash
-   dotnet run --project AES-Encryptor -- --generate-key
-   ```
+### Viewing Encryption Details
+To view the encryption details saved in the `keys.txt` file, you can open the file using any text editor. Each entry is separated by two blank lines for better readability.
 
-4. A new encryption key will be displayed. Copy and securely store this key for future use.
+### Example Entry in keys
+  ```bash
+  Method Used: Encryption
+  Computer Name: MyComputer
+  Original Text: Hello, world!
+  Encrypted Data: 9w2tR/Kazf1FYfNd7C6qGw==
+  Key: p2/BZP4vahJ3SAljRQbM9Q==
+  IV: ZOa+HcSHnE3pZzR7c+oX5A==
+  Date of Operation: 2024-03-01 15:30:45
 
-### Encrypting Data Tutorial
-In this tutorial, you will learn how to encrypt data using the AES Encryption Console Project.
-1. Follow the steps in the ["Encrypting Data"](#encrypting-data) section above.
-2. Enter the data you want to encrypt when prompted.
-3. The console will display the encrypted data and the encryption key. Copy and store the encrypted data and encryption key securely.
-
-### Decrypting Data Tutorial
-In this tutorial, you will learn how to decrypt data using the AES Encryption Console Project.
-1. Follow the steps in the ["Decrypting Data"](#decrypting-data) section above.
-2. Enter the encrypted data and encryption key when prompted.
-3. The console will display the decrypted data.
-
-Congratulations! You have successfully decrypted the data.
+  Method Used: Decryption
+  Computer Name: MyComputer
+  Original Text: Hello, world!
+  Key: p2/BZP4vahJ3SAljRQbM9Q==
+  IV: ZOa+HcSHnE3pZzR7c+oX5A==
+  Date of Operation: 2024-03-01 15:32:10
+  ```
 
 <br/>
 
@@ -137,8 +137,10 @@ Congratulations! You have successfully decrypted the data.
 
 Contributions are welcome! If you find any issues or have ideas for improvements, please open an issue or submit a pull request.
 
-<br/>
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as permitted by the terms of the MIT License.
+
+## Change Log
+
+- **[2024-03-01]**: Implemented user input options for encrypting and decrypting data, added logging functionality to save encryption details to a text file, and updated README.md with the latest changes.
