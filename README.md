@@ -143,4 +143,4 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 
 ## Change Log
 
-- **[2024-03-01]**: Implemented user input options for encrypting and decrypting data, added logging functionality to save encryption details to a text file, and updated README.md with the latest changes.
+- **[2024-02-28]**: Implemented user input options for encrypting and decrypting data, added logging functionality to save encryption details to a text file, and updated README.md with the latest changes.
